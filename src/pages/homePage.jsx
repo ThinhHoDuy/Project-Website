@@ -1,10 +1,11 @@
-
 import React from "react";
+import Slide from "../component/header/slider";
+import Product from "../component/product/product";
 const HomePage = () => {
     return (
         <>
-            <div>HomePage</div>
-                      
+            <div><Slide /></div>
+            <Product/>
         </>
     )
 }

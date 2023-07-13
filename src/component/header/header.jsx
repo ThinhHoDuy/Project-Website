@@ -6,6 +6,7 @@ import { WrapperHeader, WrapperTextHeader, WrapperHeaderAccount, WrapperTextHead
 import { UserOutlined } from '@ant-design/icons';
 import { CaretDownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import ButtonInputSearch from "../buttonSearch/buttonInputSearch";
+import NavBar from "./navBar";
 const Header = () => {
     return (
         <>
@@ -19,10 +20,10 @@ const Header = () => {
                             size="large"
                             placeholder="input search text"
                             textButton="Tìm kiếm"
-                           
+
                         />
                     </Col>
-                    <Col span={6} style={{display: 'flex',gap: '35px' }}>
+                    <Col span={6} style={{ display: 'flex', gap: '35px' }}>
                         <WrapperHeaderAccount>
                             <div>
                                 <UserOutlined style={{ fontSize: '30px' }} />
@@ -35,13 +36,14 @@ const Header = () => {
                                 </div>
                             </div>
                         </WrapperHeaderAccount>
-                        <div> 
-                            <ShoppingCartOutlined />
+                        <div>
+                            <ShoppingCartOutlined style={{color: '#fff',fontSize: 30}} />
                             <WrapperTextHeaderSmall>Giỏ hàng</WrapperTextHeaderSmall>
                         </div>
                     </Col>
                 </WrapperHeader>
             </div>
+            <NavBar />
             <main>
                 <Outlet />
             </main>
