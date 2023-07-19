@@ -1,18 +1,22 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import RootLayout from "./pages/rootLayout";
 import HomePage from "./pages/homePage";
 import OrderPage from "./pages/orderPage";
 import ProductPage from "./pages/productPage";
-import Header from "./component/header/header";
+import Cart from "./component/cart/Cart";
+
 
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path='/' element={<Header />}>
+    <Route path='/' element={<RootLayout />}>
       <Route path='/home' element={<HomePage />}></Route>
       <Route path='/order' element={<OrderPage />}></Route>
       <Route path='/product' element={<ProductPage />}></Route>
+      <Route path='/cart' element={<Cart/>}></Route>
+
     </Route>
   ));
   return (
