@@ -5,15 +5,15 @@ const initialState = {
     status: 'idle'
 }
 export const getProducts = createAsyncThunk('products/get', async () => {
-    const data = await fetch('https://fakestoreapi.com/products')
+    const data = await fetch('https://dummyjson.com/products')
     const result = await data.json();
-    return result;
-})
+    return result.products;
+});
 
 const productSlice = createSlice({
     name: 'products',
     initialState,
-    reducers: {
+    reducers: { 
 
     },
     extraReducers: (builder) => {

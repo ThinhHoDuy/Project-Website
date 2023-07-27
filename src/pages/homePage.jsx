@@ -1,11 +1,16 @@
 import React from "react";
 import Slide from "../component/header/slider";
-import Product from "../component/product/product";
+import { Banner } from "../component/banner/banner";
+import Body from "../component/body/body";
+import Footer from "../component/footer/footer";
+
 const HomePage = () => {
     return (
         <>
-            <div><Slide /></div>
-            <div><Product /></div>           
+            <Slide />
+            <Banner />
+            <Body />
+            <div><Footer/></div>
         </>
     )
 }
