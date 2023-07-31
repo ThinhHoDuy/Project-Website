@@ -1,36 +1,55 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    data: [],
-    status: 'idle'
+    products: [],
+    productsStatus: 'idle',
+    productSingle: [],
+    productSingleStatus: 'idle'
 }
-export const getProducts = createAsyncThunk('products/get', async () => {
+export const fetchAsyncProducts = createAsyncThunk('products/get', async () => {
     const data = await fetch('https://dummyjson.com/products')
     const result = await data.json();
     return result.products;
 });
 
-const productSlice = createSlice({
-    name: 'products',
-    initialState,
-    reducers: { 
+export const fetchAsyncProductSingle = createAsyncThunk('product-single/get', async (id) => {
+    const data = await fetch(`https://dummyjson.com/products/${id}`);
+    const result = await data.json();
+    return result;
+});
 
-    },
+const productSlice = createSlice({
+    name: 'product',
+    initialState,
+    reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(getProducts.pending, (state, action) => {
-                state.status = 'loading';
-                
+            .addCase(fetchAsyncProducts.pending, (state, action) => {
+                state.productsStatus = 'loading';
             })
-            .addCase(getProducts.fulfilled, (state, action) => {
-                state.data = action.payload;
-                state.status = 'idle'
+            .addCase(fetchAsyncProducts.fulfilled, (state, action) => {
+                state.products = action.payload;
+                state.productsStatus = 'idle'
             })
-            .addCase(getProducts.rejected, (state, action) => {
-                state.status = 'error'
+            .addCase(fetchAsyncProducts.rejected, (state, action) => {
+                state.productsStatus = 'error'
+            })
+            .addCase(fetchAsyncProductSingle.pending, (state, action) => {
+                state.productSingleStatus = 'loading';
+            })
+            .addCase(fetchAsyncProductSingle.fulfilled, (state, action) => {
+                state.productSingle = action.payload;
+                state.productSingleStatus = 'idle'
+            })
+            .addCase(fetchAsyncProductSingle.rejected, (state, action) => {
+                state.productSingleStatus = 'error'
             })
 
     }
 });
+export const getProducts = (state) => state.product.products;
+export const getProductSingle = (state) => state.product.productSingle;
+export const getProductsStatus = (state) => state.product.productsStatus;
+export const getProductSingleStatus = (state) => state.product.productSingleStatus;
 export default productSlice.reducer;
 

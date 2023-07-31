@@ -34,7 +34,7 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to="/cart">
-                        <i className="fa-solid fa-cart-shopping">{cartItemCount}</i>
+                        <i className="fa-solid fa-cart-shopping">{cartItemCount}</i>    
                     </Link>
                 </li>
             </ul>

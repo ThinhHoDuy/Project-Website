@@ -1,0 +1,70 @@
+.categories {
+  padding: 45px 5%;
+}
+
+.categories h2,
+.contact h2 {
+  color: #000;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+.categories p,
+.contact p {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.category_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-value {
+  border: 2px solid #6759ff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #6759ff;
+  cursor: pointer;
+  margin: 5px 10px;
+
+  &:hover {
+    background-color: #6759ff;
+    color: #ffffff;
+  }
+}
+
+#search-container,
+#contact-container {
+  margin: 5px 10px;
+}
+
+#search-container input,
+.contact-container input {
+  background-color: transparent;
+  width: 60%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #110f29;
+  padding: 1em 0.3em;
+}
+
+#search-container input:focus {
+  border-bottom-color: #6759ff;
+}
+
+#search-container button,
+#email {
+  padding: 1em 2em;
+  margin-left: 1em;
+  background-color: #6759ff;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  margin-top: 0.5em;
+}

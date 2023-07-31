@@ -1,20 +1,81 @@
-#ft {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 0px;
-}
-.footer {
-    background-color: #000;
-    color: #fff;
+// #ft {
+//     margin: 0;
+//     padding: 0;
+//     margin-bottom: 0px;
+// }
+// .footer {
+//     background-color: #000;
+//     color: #fff;
+//     padding: 20px;
+//     text-align: center;
+// }
+
+// .footer a {
+//     color: #fff;
+//     text-decoration: none;
+// }
+
+// .footer a:hover {
+//     text-decoration: underline;
+// }
+/* Reset some default styles for better consistency */
+// body, h1, h2, h3, p, ul, li {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//     font-family: Arial, sans-serif;
+//   }
+  
+  /* Styling the footer */
+  .black-footer {
+    background-color: #fff;
+    color: #000;
     padding: 20px;
-    text-align: center;
-}
-
-.footer a {
-    color: #fff;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-links {
+    margin-left: 160px;
+  }
+  
+  .footer-logo img {
+    height: 50px;
+  }
+  
+  .footer-links ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  .footer-links ul li:first-child {
+    margin-left: 0;
+  }
+  
+  .footer-links ul li a {
     text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
+    color: #000;
+  }
+  
+  .footer-social ul li {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+  }
+  
+  .footer-bottom p {
+    color: #888;
+  }
+  
+  /* Add more styles as needed for your specific layout and design */
+  

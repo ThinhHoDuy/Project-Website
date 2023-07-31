@@ -2,35 +2,77 @@ import { useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { add } from "../cart/cartSlice";
-import { getProducts } from "./productSlice";
+import { getProducts,getProductSingle,getProductSingleStatus,getProductsStatus } from "./productSlice";
+import { fetchAsyncProducts, fetchAsyncProductSingle } from "./productSlice";
+import "./products.scss"
+import { Link } from "react-router-dom";
 
 const Product = () => {
     const dispatch = useDispatch();
-    const { data: products, status } = useSelector(state => state.products);
+    const products = useSelector(getProducts);
+    const productsStatus = useSelector(getProductsStatus)
+    const [filteredProducts, setFilteredProducts] = useState(products);
     console.log(products);
     useEffect(() => {
-        dispatch(getProducts());
+        dispatch(fetchAsyncProducts());
     }, [dispatch]);
 
-    if (status === 'loading') {
+    if (productsStatus === 'loading') {
         return <h1 style={{ textAlign: 'center' }}>loading...</h1>
     }
-    if (status === 'error') {
+    if (productsStatus === 'error') {
         return <h1 style={{ textAlign: 'center' }}>Lỗi rồi...</h1>
     }
 
     const addToCart = (product) => {
         dispatch(add(product));
     }
+    const filterProduct = (cat) => {
+        if (cat === 'all') {
+            setFilteredProducts(products);
+        } else {
+            const updatedList = products.filter((x) => x.category === cat);
+            setFilteredProducts(updatedList);
+        }
+    }
     return (
         <>
             <div>
-                <div></div>
+                <section className="categories">
+                    <h2>Categories</h2>
+                    <div className="category_btn">
+                        <div id="buttons">
+                            <button className="button-value" onClick={() => filterProduct('all')}>
+                                All
+                            </button>
+                            <button className="button-value" onClick={() => filterProduct('smartphones')}>
+                                smartphones
+                            </button>
+                            <button className="button-value" onClick={() => filterProduct('laptops')}>
+                                laptops
+                            </button>
+                            <button className="button-value" onClick={() => filterProduct('fragrances')}>
+                                fragrances
+                            </button>
+                            <button className="button-value" onClick={() => filterProduct('skincare')}>
+                                skincare
+                            </button>
+                        </div>
+                        <div id="search-container">
+                            <input
+                                type="search"
+                                id="search-input"
+                                placeholder="Search product name here.."
+                            />
+                            <button id="search">Search</button>
+                        </div>
+                    </div>
+                </section>
                 <div>
-                    <h1 style={{ textAlign: 'center' }}>Product Dashboard</h1>
                     <div className="row">
-                        {products.map(product => (
+                        {filteredProducts && filteredProducts.map(product => (
                             <div className="col-md-3" style={{ marginBottom: '10px' }} >
                                 <Card key={product.id} className="h-100">
                                     <div className="text-center">
@@ -44,9 +86,11 @@ const Product = () => {
                                     </Card.Body>
                                     <Card.Footer>
                                         <Button variant="primary" onClick={() => addToCart(product)}>Add to Cart</Button>
+                                        <Link style={{paddingLeft:"10px"}} to="">
+                                            <Button variant="primary">Buy now</Button>
+                                        </Link>
                                     </Card.Footer>
                                 </Card>
-
                             </div>
                         ))}
                     </div>
@@ -57,6 +101,7 @@ const Product = () => {
 }
 
 
+
 export default Product;
 
 
@@ -64,39 +109,3 @@ export default Product;
 
 
 
-/* <div>
-                {products.map(product => (
-                    <div id="content">
-                        <div className="content-section">
-                            <div>
-                                <div className="before"></div>
-                                <h1 className="section-heading"> BEST SELLER </h1>
-                                <div className="after"></div>
-                            </div>
-                            <p className="section-sub-heading"> Giảm ngay 10% khi mua trên 2 sản phẩm </p>
-                            <div className="product-list">
-                                <div className="product-item">
-                                    <img className="product-img" src={product.images[0]} />
-                                    <p className="product-name">{product.title}</p>
-                                    <button className="product-button" variant="primary" onClick={() => addToCart(product)}>Add to cart</button>
-                                </div>
-                                <div className="product-item">
-                                    <img className="product-img" src={product.images[1]} />
-                                    <p className="product-name">{product.title}</p>
-                                    <button className="product-button" variant="primary" onClick={() => addToCart(product)}>Add to cart</button>
-                                </div>
-                                <div className="product-item">
-                                    <img className="product-img" src={product.images[2]} />
-                                    <p className="product-name">{product.title}</p>
-                                    <button className="product-button" variant="primary" onClick={() => addToCart(product)}>Add to cart</button>
-                                </div>
-                                <div className="product-item">
-                                    <img className="product-img" src={product.images[3]} />
-                                    <p className="product-name">{product.title}</p>
-                                    <button className="product-button" variant="primary" onClick={() => addToCart(product)}>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div> */

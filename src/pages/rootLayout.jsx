@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../component/header/header";
 
 
+
 const RootLayout = () => {
     return (
         <>
@@ -10,6 +11,7 @@ const RootLayout = () => {
             <main style={{marginTop: '77px'}}>
                 <Outlet />
             </main>
+            
             
         </>
     )
