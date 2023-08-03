@@ -13,7 +13,7 @@ const Product = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
     const productsStatus = useSelector(getProductsStatus)
-    const [filteredProducts, setFilteredProducts] = useState(products);
+    const [filteredProducts, setFilteredProducts] = useState(products); 
     console.log(products);
     useEffect(() => {
         dispatch(fetchAsyncProducts());
@@ -26,7 +26,7 @@ const Product = () => {
         return <h1 style={{ textAlign: 'center' }}>Lỗi rồi...</h1>
     }
 
-    const addToCart = (product) => {
+    const addToCart = (product) => {    
         dispatch(add(product));
     }
     const filterProduct = (cat) => {
@@ -86,7 +86,7 @@ const Product = () => {
                                     </Card.Body>
                                     <Card.Footer>
                                         <Button variant="primary" onClick={() => addToCart(product)}>Add to Cart</Button>
-                                        <Link style={{paddingLeft:"10px"}} to="">
+                                        <Link style={{ paddingLeft: "10px" }} to={`/product/${product.id}`}>
                                             <Button variant="primary">Buy now</Button>
                                         </Link>
                                     </Card.Footer>

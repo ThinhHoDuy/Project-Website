@@ -37,4 +37,18 @@
 #nav li a:hover {
     color: #990000
 }
-
+.icons-noti{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #b60a0a;
+    color: white;
+    font-family: Montserrat-Medium;
+    font-size: 12px;
+    position: absolute;
+    top: 27px;
+    right: 15px;
+}

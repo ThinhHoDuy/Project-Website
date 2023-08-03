@@ -6,6 +6,7 @@ import HomePage from "./pages/homePage";
 import OrderPage from "./pages/orderPage";
 import ProductPage from "./pages/productPage";
 import Cart from "./component/cart/Cart";
+import ProductSingle from "./component/product/productSingle";
 
 
 
@@ -15,12 +16,13 @@ function App() {
       <Route index element={<HomePage />}></Route>
       <Route path='/order' element={<OrderPage />}></Route>
       <Route path='/product' element={<ProductPage />}></Route>
-      <Route path='/cart' element={<Cart/>}></Route>
+      <Route path='/cart' element={<Cart />}></Route>
+      <Route path="/product/:id" element={<ProductSingle/>}></Route>
 
     </Route>
   ));
   return (
-    <RouterProvider router={router}/>
+      <RouterProvider router={router} />
   );
 }
 

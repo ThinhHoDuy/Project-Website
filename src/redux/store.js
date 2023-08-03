@@ -4,10 +4,10 @@ import productSlice from '../component/product/productSlice';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
-const persistConfig = { 
+const persistConfig = {
     key: 'root',
     storage,
-}
+};
 const rootReducer = combineReducers({
     cart: cartSlice,
     product: productSlice,
@@ -20,4 +20,10 @@ export const store = configureStore({
    
 })
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);
+// export const store = configureStore({
+//     reducer: {
+//         cart: cartSlice,
+//         product: productSlice,
+//     }
+// })

@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 import './header.scss'
 
 const Header = () => {
-    const cartProducts = useSelector(state => state.cart);
-    const cartItemCount = Object.keys(cartProducts).length;
-
+    const cartItems = useSelector(state => state.cart.cartItems);
+    const cartItemCount = cartItems.reduce((total, product) => total + product.cartQuantity, 0);
     return (
         <div id="header">
             <div className="logo">
@@ -34,7 +33,8 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to="/cart">
-                        <i className="fa-solid fa-cart-shopping">{cartItemCount}</i>    
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        <span className="icons-noti">{cartItemCount}</span>
                     </Link>
                 </li>
             </ul>
