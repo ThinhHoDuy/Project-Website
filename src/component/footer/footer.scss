@@ -1,54 +1,78 @@
+footer {
+  padding: 50px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #121212;
+}
 
-  /* Styling the footer */
-  .black-footer {
-    background-color: #fff;
-    color: #000;
-    padding: 20px;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .footer-links {
-    margin-left: 160px;
-  }
-  
-  .footer-logo img {
-    height: 50px;
-  }
-  
-  .footer-links ul li {
-    display: inline;
-    margin-left: 20px;
-  }
-  
-  .footer-links ul li:first-child {
-    margin-left: 0;
-  }
-  
-  .footer-links ul li a {
-    text-decoration: none;
-    color: #000;
-  }
-  
-  .footer-social ul li {
-    display: inline;
-    margin-left: 10px;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding-top: 10px;
-    border-top: 1px solid #444;
-  }
-  
-  .footer-bottom p {
-    color: #888;
-  }
-  
+footer div {
+  width: 360px;
+}
+
+footer h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+footer a p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #121212fb;
+}
+footer a:hover {
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+footer i {
+  font-size: 24px;
+  color: #121212;
+  padding-right: 1rem;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.34s ease;
+}
+footer i:hover {
+  transform: translateY(-5px);
+}
+ 
   /* Add more styles as needed for your specific layout and design */
+  /*Contact*/
+  .contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://images.unsplash.com/photo-1589363360147-4f2d51541551?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80");
+    min-height: 400px;
+    background-position: center center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    padding: 100px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  section.contact h2,
+  section.contact p {
+    width: 70%;
+    margin: 10px auto;
+    color: #fff;
+  }
+  
+  .contact_form {
+    width: 60%;
+    margin: 10px auto;
+  }
+  
+  #contact-container input {
+    background: white;
+    padding: 14px 15px;
+    width: 24%;
+    border-radius: 5px;
+  }
+  
+  hr {
+    margin-top: 70px;
+    color: #e9e9e9;
+    border: 1px solid #e9e9e9;
+  }
   

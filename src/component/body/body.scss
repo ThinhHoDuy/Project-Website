@@ -1,14 +1,16 @@
-#content .content-section{
+#content .content-section {
     width: 1268px;
     padding: 55px 0;
     margin-left: auto;
     margin-right: auto;
 }
-#content .section-heading{
+
+#content .section-heading {
     font-size: 30px;
     text-align: center;
 }
-#content .before{
+
+#content .before {
     background-color: #000;
     height: 2px;
     left: -100px;
@@ -17,52 +19,69 @@
     width: 80px;
 
 }
-#content .section-sub-heading{
+
+#content .section-sub-heading {
     font-size: 15px;
     text-align: center;
     margin-top: -10px;
     font-style: italic;
     opacity: 0.8;
 }
-#content .product-list{
+
+#content .product-list {
     padding-top: 70px;
     display: flex;
 }
-#content .product-item{
+
+#content .product-item {
     width: 25%;
     text-align: center;
     padding: 15px;
 }
-#content .product-name{
+
+#content .product-name {
     font-size: 20px;
-    
+
 }
-#content .product-img{
+
+#content .product-img {
     width: 250px;
     height: 340px;
     padding-bottom: 20px;
     transition: all 0.3s;
 
-    &:hover{
+    &:hover {
         transform: scale(1.1);
         transition: all 0.3s;
     }
-        
+
 }
-#content .product-button{
-    background-color: rgb(201, 200, 237);
+
+#content .product-button {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#content .product-button:hover {
+    background: #5f4bf1;
 }
 
 .divider {
     font-size: 30px;
     display: flex;
     align-items: center;
-  }
-  
-  .divider::before, .divider::after {
+}
+
+.divider::before,
+.divider::after {
     flex: 1;
     content: '';
     padding: 1.2px;
     background-color: #000;
     margin: 5px;
-  }
+}

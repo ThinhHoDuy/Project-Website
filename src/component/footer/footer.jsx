@@ -3,34 +3,57 @@ import './footer.scss';
 
 const Footer = () => {
     return (
-        <footer className="black-footer">
-            <div className="footer-content">
-                <div className="footer-logo">
-                    <img src="/assets/logo.png" alt="Your Logo" />
+        <>
+            <section className="contact">
+                <h2>Contact us</h2>
+                <p>
+                    Functional handbags made of luxurious materials to improve people's
+                    lives in small but mighty ways. Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Est dolorem cum corporis impedit quae praesentium
+                    nulla atque ut, reprehenderit qui mollitia, facilis voluptates
+                    cupiditate nam fuga, quis fugit voluptatum labore.
+                </p>
+
+                <div id="contact-container">
+                    <input
+                        type="email"
+                        id="email-input"
+                        placeholder="Enter your email address.."
+                    />
+                    <button id="email">Submit</button>
                 </div>
-                <div className="footer-links">
-                    <ul>
-                        <li><a href="/">Trang chủ</a></li>
-                        <li><a href="/product">Sản phẩm</a></li>
-                        <li><a href="/order">Dịch vụ</a></li>
-                        <li><a href="/">Liên hệ</a></li>
-                    </ul>
+            </section>
+            
+            <hr />
+            <footer>
+                <div>
+                    <h5>Quick links</h5>
+                    <a href="#/"><p>Bags</p></a>
+                    <a href="#/"><p>Shoes</p></a>
+                    <a href="#/"><p>Lookbook</p></a>
                 </div>
-                <div className="footer-social">
-                    <ul>
-                        <li><a href="https://www.facebook.com/"><img src="/assets/facebook-icon.png" alt="Facebook" /></a></li>
-                        <li><a href="https://www.facebook.com/"><img src="/assets/twitter-icon.png" alt="Twitter" /></a></li>
-                        <li><a href="https://www.facebook.com/"><img src="/assets/instagram-icon.png" alt="Instagram" /></a></li>
-                    </ul>
+                <div>
+                    <h5>Info</h5>
+                    <a href="#/"><p>About</p></a>
+                    <a href="#/"><p>Contact us</p></a>
+                    <a href="#/"><p>Shipping policy</p></a>
+                    <a href="#/"><p>Blog</p></a>
                 </div>
-            </div>
-            <div className="footer-bottom">
-                <p>Mọi thắc mắc xin vui lòng liên hệ</p>
-                <p>Email: hoduythinh@gmail.com</p>
-                <p>Điện thoại: 0931929204</p>
-                <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
-            </div>
-        </footer>
+                <div>
+                    <h5>Our mission</h5>
+                    <p>
+                        Quality materials, good designs, craftsmanship and sustainability.
+                    </p>
+                    <div>
+                        <i class="bx bxl-facebook-square"></i>
+                        <i class="bx bxl-instagram"></i>
+                        <i class="bx bxl-youtube"></i>
+                        <i class="bx bxl-tiktok"></i>
+                        <i class="bx bxl-twitter"></i>
+                    </div>
+                </div>
+            </footer>
+        </>
     );
 };
 

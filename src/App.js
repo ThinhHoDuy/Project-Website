@@ -7,8 +7,10 @@ import OrderPage from "./pages/orderPage";
 import ProductPage from "./pages/productPage";
 import Cart from "./component/cart/Cart";
 import ProductSingle from "./component/product/productSingle";
-
-
+import Login from "./admin/login";
+import Admin from "./admin/admin";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
@@ -17,12 +19,17 @@ function App() {
       <Route path='/order' element={<OrderPage />}></Route>
       <Route path='/product' element={<ProductPage />}></Route>
       <Route path='/cart' element={<Cart />}></Route>
-      <Route path="/product/:id" element={<ProductSingle/>}></Route>
+      <Route path="/product/:id" element={<ProductSingle />}></Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/admin" element={<Admin/>}></Route>
 
     </Route>
   ));
   return (
+    <>
       <RouterProvider router={router} />
+      <ToastContainer/>
+    </>
   );
 }
 

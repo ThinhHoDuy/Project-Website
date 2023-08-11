@@ -10,7 +10,7 @@ const Header = () => {
         <div id="header">
             <div className="logo">
                 <a href="/">
-                    <img alt="" src="https://preview.colorlib.com/theme/fashe/images/icons/logo.png.webp"/>
+                    <img alt="" src="https://preview.colorlib.com/theme/fashe/images/icons/logo.png.webp" />
                 </a>
             </div>
             <ul id="nav">
@@ -27,8 +27,8 @@ const Header = () => {
                     <Link to="#">Liên hệ</Link>
                 </li>
                 <li>
-                    <Link to="">
-                        <i className="fa-solid fa-magnifying-glass Search"></i>
+                    <Link to="/admin">
+                        <i class="fa-solid fa-user"></i>
                     </Link>
                 </li>
                 <li>

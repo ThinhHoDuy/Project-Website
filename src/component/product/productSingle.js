@@ -1,19 +1,23 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAsyncProductSingle, getProductSingle, getProductSingleStatus } from "./productSlice";
-import { add } from "../cart/cartSlice";
+import { fetchAsyncProductSingle, getProductSingle } from "./productSlice";
+import { add, decreaseCart, increaseCart } from "../cart/cartSlice";
 import "../product/productSingle.scss"
 const ProductSingle = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const product = useSelector(getProductSingle)
-    const productSingleStatus = useSelector(getProductSingleStatus)
     console.log(product)
     useEffect(() => {
         dispatch(fetchAsyncProductSingle(id));
     }, [dispatch, id]);
-
+    const handleDecreaseCart = (product) => {
+        dispatch(decreaseCart(product));
+    }
+    const handleIncreaseCart = (product) => {
+        dispatch(increaseCart(product));
+    }
     const addToCart = (product) => {
         dispatch(add(product));
     }
@@ -70,23 +74,20 @@ const ProductSingle = () => {
                         </div>
                     </div>
                     <div>
-                        <div class="qty">
-                            <div>
-                                <div class="qty-text">Quantity:</div>
-                                <div class="qty-change">
-                                    <button type="button" class="qty-decrease">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <div class="qty-value ">{ }</div>
-                                    <button type="button" class="qty-increase">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
+                        <div>
+                            <div className="cart-product-quantity">
+                                <button onClick={() => handleDecreaseCart(product)}>
+                                    -
+                                </button>
+                                <div className="count">{product.cartQuantity}</div>
+                                <button onClick={() => handleIncreaseCart(product)}>
+                                    +
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div className="button-cart">
-                        <button onClick={() => addToCart(product)}>Add to cart</button>
+                    <div>
+                        <button className="button-cart" onClick={() => addToCart(product)}>Add to cart</button>
                     </div>
                 </div>
             </div>
