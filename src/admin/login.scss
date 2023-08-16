@@ -16,6 +16,9 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
+.input-container label{
+  display: flex;
+}
   
   .login-container h2 {
     margin-bottom: 20px;

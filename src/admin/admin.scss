@@ -8,3 +8,9 @@
 // .button-modal{
 //     padding-right: 800px;
 // }
+.form-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Đảm bảo form chiếm toàn bộ chiều cao của trình duyệt */
+  }

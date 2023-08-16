@@ -11,6 +11,7 @@ import Login from "./admin/login";
 import Admin from "./admin/admin";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import { Addcrud } from "./admin/addcrud";  
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
@@ -21,8 +22,8 @@ function App() {
       <Route path='/cart' element={<Cart />}></Route>
       <Route path="/product/:id" element={<ProductSingle />}></Route>
       <Route path="/login" element={<Login />}></Route>
-      <Route path="/admin" element={<Admin/>}></Route>
-
+      <Route path="/admin" element={<Admin />}></Route>
+      <Route path="/addcrud" element={<Addcrud/>}></Route>
     </Route>
   ));
   return (

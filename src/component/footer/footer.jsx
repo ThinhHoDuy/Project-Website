@@ -7,11 +7,10 @@ const Footer = () => {
             <section className="contact">
                 <h2>Contact us</h2>
                 <p>
-                    Functional handbags made of luxurious materials to improve people's
-                    lives in small but mighty ways. Lorem ipsum dolor sit amet consectetur,
-                    adipisicing elit. Est dolorem cum corporis impedit quae praesentium
-                    nulla atque ut, reprehenderit qui mollitia, facilis voluptates
-                    cupiditate nam fuga, quis fugit voluptatum labore.
+                    Liên hệ ngay với chúng tôi để tìm hiểu về các dòng sản phẩm điện thoại và laptop đa dạng,
+                    từ tiện ích đến hiệu suất cao.Nhận tư vấn chọn lựa sản phẩm phù hợp với nhu cầu và mong muốn
+                    của bạn.Được cung cấp thông tin chi tiết về cấu hình,tính năng, và giá cả.
+                    Hỏi đáp về chính sách bảo hành, dịch vụ hậu mãi và chương trình khuyến mãi.
                 </p>
 
                 <div id="contact-container">

@@ -1,7 +1,7 @@
 import React from "react";
 import "./cart.scss"
 import { useSelector, useDispatch } from "react-redux";
-import { remove,decreaseCart,increaseCart,clearCart } from "./cartSlice";
+import { remove, decreaseCart, increaseCart, clearCart } from "./cartSlice";
 import { Link } from "react-router-dom";
 
 
@@ -13,16 +13,15 @@ const Cart = () => {
     const removeToCart = (id) => {
         dispatch(remove(id));
     }
+    const handleClearCart = () => {
+        dispatch(clearCart())
+    }
     const handleDecreaseCart = (product) => {
         dispatch(decreaseCart(product));
     }
     const handleIncreaseCart = (product) => {
         dispatch(increaseCart(product))
     }
-    const handleClearCart = () => {
-        dispatch(clearCart())
-    }
-
     return (
         <>
             <div className="cart-container">
@@ -61,7 +60,12 @@ const Cart = () => {
                             {cartItems && cartItems.map((product) => (
                                 <div className="cart-item" key={product.id}>
                                     <div className="cart-product">
-                                        <img src={product.images[0]} alt={product.title} />
+                                        {product.images && product.images.length > 0 ? (
+                                            <img src={product.images[0]} alt={product.title} />
+                                        ) : (
+                                            <img src="default-image-url" alt="Default" />
+                                        )}
+
                                         <div>
                                             <h3>{product.title}</h3>
                                             <p>{product.description}</p>

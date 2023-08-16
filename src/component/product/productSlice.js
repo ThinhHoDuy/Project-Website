@@ -7,9 +7,9 @@ const initialState = {
     productSingleStatus: 'idle'
 }
 export const fetchAsyncProducts = createAsyncThunk('products/get', async () => {
-    const data = await fetch('https://dummyjson.com/products')
+    const data = await fetch('http://localhost:8000/products')
     const result = await data.json();
-    return result.products;
+    return result;
 });
 
 export const fetchAsyncProductSingle = createAsyncThunk('products-single/get', async (id) => {

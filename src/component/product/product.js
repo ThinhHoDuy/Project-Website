@@ -86,7 +86,11 @@ const Product = () => {
                             <div className="card">
                                 <div className="image-container">
                                     <Link to={`/product/${product.id}`} >
-                                        <img src={product.images[0]} alt="" />
+                                        {product.images && product.images.length > 0 ? (
+                                            <img src={product.images[0]} alt="" />
+                                        ) : (
+                                            <img src="default-image-url" alt="Default" />
+                                        )}
                                     </Link>
                                 </div>
                                 <div><i className="bx bx-heart" id="heart-icon"></i></div>

@@ -7,7 +7,7 @@ const Slide = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://similux-vinovatheme.myshopify.com/cdn/shop/files/s-2-2_8f6f6c9c-4f6b-4587-874e-5781029eccef_2048x.jpg?v=1673401622"
+                        src="https://waltonbd.com/image/catalog/category-banner/mobile/nx6-slider.jpg"
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -18,7 +18,7 @@ const Slide = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://similux-vinovatheme.myshopify.com/cdn/shop/files/s-2-3_d27a89cf-e796-40e1-a475-53db59f897c5_2048x.jpg?v=1673401623"
+                        src="https://waltonbd.com/image/catalog/category-banner/mobile/gh11-banner.jpg"
                         alt="Second slide"
                     />
 
@@ -30,7 +30,7 @@ const Slide = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://similux-vinovatheme.myshopify.com/cdn/shop/files/s-2-1_3b10ef68-da51-4320-9758-7f3d58ba0a15_2048x.jpg?v=1673401623"
+                        src="https://waltonbd.com/image/catalog/category-banner/mobile/nx6-slider.jpg"
                         alt="Third slide"
                     />
 
