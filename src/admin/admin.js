@@ -9,7 +9,23 @@ const Admin = () => {
     const usenavigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [dataSource, setDataSource] = useState([]);
-   
+
+    const LoadEdit = (id) => {
+        usenavigate('/Editcrud/' + id);
+    }
+    const Removefunction = (id) => {
+        if (window.confirm('Do you want to remove?')) {
+            fetch("http://localhost:8000/products/" + id, {
+                method: "DELETE"
+            }).then((res) => {
+                alert('Removed successfully.')
+                window.location.reload();
+            }).catch((err) => {
+                console.log(err.message)
+            })
+        }
+    }
+
     useEffect(() => {
         let username = sessionStorage.getItem("username");
         if (username === "" || username === null) {
@@ -84,13 +100,17 @@ const Admin = () => {
                             },
                             {
                                 title: "CRUD",
-                                render: () => {
+                                render: (text, record) => {
                                     return (
-                                        <>
-                                            <AiFillDelete />
-                                            <BiEdit />
-                                        </>
-                                    )
+                                        <div style={{ display: "flex" }}>
+                                            <div onClick={() => Removefunction(record.id)}>
+                                                <AiFillDelete />
+                                            </div>
+                                            <div onClick={() => { LoadEdit(record.id) }}>
+                                                <BiEdit />
+                                            </div>
+                                        </div>
+                                    );
                                 }
 
                             },

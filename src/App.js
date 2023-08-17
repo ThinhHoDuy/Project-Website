@@ -12,6 +12,7 @@ import Admin from "./admin/admin";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import { Addcrud } from "./admin/addcrud";  
+import { Editcrud } from "./admin/editcrud";
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
@@ -23,7 +24,8 @@ function App() {
       <Route path="/product/:id" element={<ProductSingle />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/admin" element={<Admin />}></Route>
-      <Route path="/addcrud" element={<Addcrud/>}></Route>
+      <Route path="/addcrud" element={<Addcrud />}></Route>
+      <Route path="/Editcrud/:id" element={<Editcrud />}></Route>
     </Route>
   ));
   return (

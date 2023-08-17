@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAsyncProductSingle, getProductSingle } from "./productSlice";
+import { fetchAsyncProducts, getProducts } from "./productSlice";
 import { add, decreaseCart, increaseCart } from "../cart/cartSlice";
 import "../product/productSingle.scss"
 const ProductSingle = () => {
-    const { id } = useParams();
+    const { id }  = useParams();
     const dispatch = useDispatch();
-    const product = useSelector(getProductSingle)
+    const productId = parseInt(id) - 1
+    const product = useSelector(state => getProducts(state)[productId]);
     console.log(product)
     useEffect(() => {
-        dispatch(fetchAsyncProductSingle(id));
+        dispatch(fetchAsyncProducts(id));
     }, [dispatch, id]);
     const handleDecreaseCart = (product) => {
         dispatch(decreaseCart(product));
@@ -79,7 +80,7 @@ const ProductSingle = () => {
                                 <button onClick={() => handleDecreaseCart(product)}>
                                     -
                                 </button>
-                                <div className="count">{product.cartQuantity}</div>
+                                {/* <div className="count">{product.Quantity}</div> */}
                                 <button onClick={() => handleIncreaseCart(product)}>
                                     +
                                 </button>
